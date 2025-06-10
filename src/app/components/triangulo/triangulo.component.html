@@ -1,0 +1,119 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Triángulo</ion-card-title>
+    <ion-card-subtitle>Perímetro</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    <!-- Descripción -->
+    <p>
+      El perímetro de un triángulo es la suma de las longitudes de sus tres
+      lados. En otras palabras, es la medida total del contorno o borde del
+      triángulo.
+    </p>
+
+    <!-- Diagrama del triángulo -->
+    <div class="triangle-diagram">
+      <svg width="180" height="130" viewBox="0 0 180 130">
+        <!-- Triángulo con relleno -->
+        <polygon
+          points="90,15 40,110 140,110"
+          fill="lightblue"
+          stroke="blue"
+          stroke-width="2"
+          opacity="0.8"
+        />
+
+        <!-- Líneas internas (altura) -->
+        <line
+          x1="90"
+          y1="15"
+          x2="90"
+          y2="110"
+          stroke="gray"
+          stroke-width="1"
+          stroke-dasharray="2,2"
+        />
+
+        <!-- Etiquetas de lados -->
+        <text x="60" y="68" fill="blue" font-size="16" font-weight="bold">
+          c
+        </text>
+        <text x="120" y="68" fill="blue" font-size="16" font-weight="bold">
+          b
+        </text>
+        <text x="90" y="125" fill="blue" font-size="16" font-weight="bold">
+          a
+        </text>
+
+        <!-- Vértices pequeños -->
+        <circle cx="90" cy="15" r="2" fill="blue" />
+        <circle cx="40" cy="110" r="2" fill="blue" />
+        <circle cx="140" cy="110" r="2" fill="blue" />
+      </svg>
+    </div>
+
+    <!-- Fórmula centrada -->
+    <div class="formula">
+      <h2><strong>p = a + b + c</strong></h2>
+    </div>
+
+    <!-- Separador -->
+    <hr style="margin: 20px 0; border: 1px solid #ddd" />
+
+    <!-- Campos de entrada -->
+    <ion-item lines="none">
+      <ion-label position="stacked">Lado A (cm)</ion-label>
+      <ion-input
+        type="number"
+        [(ngModel)]="sideA"
+        placeholder="10"
+        min="0"
+        step="0.01"
+      >
+      </ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label position="stacked">Lado B (cm)</ion-label>
+      <ion-input
+        type="number"
+        [(ngModel)]="sideB"
+        placeholder="20"
+        min="0"
+        step="0.01"
+      >
+      </ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label position="stacked">Lado C (cm)</ion-label>
+      <ion-input
+        type="number"
+        [(ngModel)]="sideC"
+        placeholder="15"
+        min="0"
+        step="0.01"
+      >
+      </ion-input>
+    </ion-item>
+
+    <!-- Botón de cálculo -->
+    <ion-button
+      expand="block"
+      (click)="calculate()"
+      [disabled]="sideA <= 0 || sideB <= 0 || sideC <= 0"
+      color="primary"
+      class="ion-margin-top"
+    >
+      CALCULAR EL PERÍMETRO
+    </ion-button>
+
+    <!-- Resultado -->
+    <div *ngIf="showResult" class="resultado">
+      <p>
+        <strong>El perímetro es {{ result | number : "1.0-0" }}</strong>
+      </p>
+    </div>
+  </ion-card-content>
+</ion-card>

@@ -1,20 +1,27 @@
+<!-- src/app/home/home.page.html -->
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>Figuras Geométricas</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <!-- Selector Principal de Figura -->
+  <ion-item>
+    <ion-label>Figura Geométrica</ion-label>
+    <ion-select
+      [(ngModel)]="figuraSeleccionada"
+      placeholder="Escoja una figura"
+      interface="popover"
+    >
+      <ion-select-option value="circulo">Círculo</ion-select-option>
+      <ion-select-option value="triangulo">Triángulo</ion-select-option>
+    </ion-select>
+  </ion-item>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <!-- Mostrar componente según selección -->
+  <div [ngSwitch]="figuraSeleccionada" class="ion-margin-top">
+    <app-circulo *ngSwitchCase="'circulo'"></app-circulo>
+    <app-triangulo *ngSwitchCase="'triangulo'"></app-triangulo>
   </div>
 </ion-content>

@@ -1,0 +1,55 @@
+.triangle-diagram {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.formula {
+  text-align: center;
+  margin: 20px 0;
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.formula h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+}
+
+.resultado {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+  text-align: left;
+  border-left: 4px solid #28a745;
+}
+
+.resultado p {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+ion-item {
+  --border-style: solid;
+  --border-width: 0 0 1px 0;
+  --border-color: #ddd;
+  margin-bottom: 10px;
+}
+
+ion-input {
+  font-size: 16px;
+}
+
+ion-button {
+  --border-radius: 8px;
+  font-weight: bold;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  margin: 20px 0;
+}

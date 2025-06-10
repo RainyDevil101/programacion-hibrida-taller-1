@@ -1,0 +1,57 @@
+.info-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 15px 0;
+}
+
+.formula-info {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.formula-info p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.circle-diagram {
+  flex: 0 0 100px;
+  text-align: center;
+}
+
+.resultado {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+  text-align: left;
+  border-left: 4px solid #28a745;
+}
+
+.resultado p {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+ion-item {
+  --border-style: solid;
+  --border-width: 0 0 1px 0;
+  --border-color: #ddd;
+}
+
+ion-input {
+  font-size: 16px;
+}
+
+ion-button {
+  --border-radius: 8px;
+  font-weight: bold;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  margin: 20px 0;
+}
